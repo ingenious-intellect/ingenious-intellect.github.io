@@ -35,6 +35,10 @@ h1 {
   background-size: auto;
 }
 
+.twitter-tweet{
+  width: 300px !important;
+}
+
 .container {
   display: -webkit-box;
   display: -webkit-flex;
