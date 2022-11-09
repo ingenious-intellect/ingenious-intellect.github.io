@@ -37,6 +37,7 @@ h1 {
 
 .twitter-tweet{
   width: 300px !important;
+  max-height: 450px !important;
 }
 
 
@@ -2819,6 +2820,12 @@ h1 {
   margin-top: 10px;
   -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.div-block-39.div-block-slide {
+  margin-top: 10px;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .div-block-40 {
