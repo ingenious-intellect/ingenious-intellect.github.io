@@ -184,6 +184,10 @@ h1 {
   grid-row-gap: 20px;
 }
 
+.live{
+  color: red;
+}
+
 .button-primary-copy {
   display: -webkit-box;
   display: -webkit-flex;
