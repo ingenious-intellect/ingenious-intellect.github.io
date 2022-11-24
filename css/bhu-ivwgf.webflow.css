@@ -2036,7 +2036,6 @@ h1 {
   flex-direction: column;
   border-bottom: 1px solid #e4ebf3;
   background-color: #f5f7fa;
-  z-index: calc(#gallery - 0.5);
 }
 
 .footer-wrapper {
