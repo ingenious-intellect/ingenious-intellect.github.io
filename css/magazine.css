@@ -368,6 +368,10 @@ body{
 	background-size:44px 44px;
 }
 
+.home-icon:hover{
+	opacity: 0.7;
+}
+
 .zoom-icon-in{
 	background-position:0 0;
 	cursor: pointer;
