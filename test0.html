@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 50px;
+        text-align: center;
+        font-size: 25px;
+        cursor: pointer;
+        color: white;
+      }
+
+      .tab {
+        padding: 20px;
+        color: white;
+      }
+
+      .row:after {
+        overflow: hidden;
+        display: table;
+        clear: both;
+      }
+
+      .closeButton {
+        float: right;
+        color: black;
+        font-size: 35px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align:center">
+      <h2>Expanding/Collapsible Grids in HTML</h2>
+    </div>
+
+    <div class="row">
+      <div class="column" onclick="openGrid('expd1');" style="background:red;">Grid1</div>
+      <div class="column" onclick="openGrid('expd2');" style="background:green;">Grid2</div>
+      <div class="column" onclick="openGrid('expd3');" style="background:blue;">Grid3</div>
+    </div>
+
+    <div id="expd1" class="tab" style="display:none; background:red">
+      <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
+      <h2>Box 1</h2>
+      <div  class="videoWrapper" >
+        <iframe src="lens/index.html" width="952" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
+      </div>
+    </div>
+
+    <div id="expd2" class="tab" style="display:none; background:green">
+      <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
+      <h2>Box 2</h2>
+      <div  class="videoWrapper" >
+        <iframe src="ethereal/index.html" width="952" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
+      </div>
+    </div>
+      <div id="expd3" class="tab" style="display:none;">
+        <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
+        <iframe src="lens/index.html" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
+      </div>
+    
+
+    <script>
+      function openGrid(tabContent) {
+        var i, x
+        x = document.getElementsByClassName('tab')
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = 'none'
+        }
+        document.getElementById(tabContent).style.display = 'block'
+      }
+    </script>
+  </body>
+</html>
