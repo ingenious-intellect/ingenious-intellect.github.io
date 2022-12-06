@@ -101,96 +101,109 @@
       </div>
     </div>
   </div>
+
   <style>
-    * {
-      box-sizing: border-box;
+    input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
     }
-
-    .tab {
-      padding: 20px;
-      color: rgba(90, 141, 239, 0.23);
+    .accordion-wrapper {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+        width: device-width;
+        margin:0 auto;
     }
-
-    .closeButton {
-      float: right;
-      color: black;
-      font-size: 35px;
-      cursor: pointer;
+    .accordion {
+        width: 100%;
+        color: white;
+        overflow: hidden;
+        margin-bottom: 16px;
     }
-    .clickbox {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      padding: 10px 20px;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      border-radius: 5px;
-      background-color: rgba(90, 141, 239, 0.23);
-      cursor:pointer;
+    .accordion:last-child{
+        margin-bottom: 0;
     }
+    .accordion-label {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        padding: 25px;
+        background: rgba(4,57,94,.8);
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .accordion-label:hover {
+        background: rgba(4,57,94,1);
+    }
+    .accordion-label::after {
+        content: "\276F";
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .accordion-content {
+        max-height: 0;
+        padding: 0 16px;
+        color: rgba(4,57,94,1);
+        background: white;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .accordion-content iframe{
+        margin: 0;
+    }
+    input:checked + .accordion-label {
+        background: rgba(4,57,94,1);
+    }
+    input:checked + .accordion-label::after {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    input:checked ~ .accordion-content {
+        max-height: 100vh;
+        padding: 16px;
+    }
+    .tab-close {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1em;
+        font-size: 1em;
+        color:black;
+        &:hover{
+            white;
+        }
+    }
+      
   </style>
-
-
-  <h1 class="heading-3 _2">Gallery</h1>
-  <div class="section-6 wf-section">
-    <div class="container-7 w-container">
-      <div class="div-block-20 tabs-menu w-tab-menu">
-        <div class="clickbox">
-          <div class="text-block-10" onclick="openGrid('expd1');">Grid1</div>
+  
+  <h1 class="heading-3 _2">JS Accordion</h1>
+  <div class="section-7 wf-section" style="margin-left: 5px; margin-right: 5px;">
+    <div class="accordion-wrapper">
+        <div class="accordion">
+            <input type="radio" name="radio-a" id="check1" checked>
+            <label class="accordion-label" for="check1">Accordion 1</label>
+            <iframe src="lens/index.html" class="accordion-content" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
         </div>
-        <div class="clickbox">
-          <div class="text-block-10" onclick="openGrid('expd2');">Grid2</div>
+        <div class="accordion">
+            <input type="radio" name="radio-a" id="check2">
+            <label class="accordion-label" for="check2">Accordion 2</label>
+            <iframe src="lens/index.html" class="accordion-content" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
         </div>
-        <div class="clickbox">
-          <div class="text-block-10" onclick="openGrid('expd3');">Grid3</div>
+        <div class="accordion">
+            <input type="radio" name="radio-a" id="check3">
+            <label class="accordion-label" for="check3">Accordion 3</label>
+            <iframe src="lens/index.html" class="accordion-content" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
         </div>
-        <div class="clickbox">
-          <div class="text-block-10" onclick="openGrid('expd4');">Grid4</div>
+        <div class="accordion">
+            <input type="radio" id="check4" name="radio-a">
+            <label for="check4" class="tab-close">Close all &times;</label>
         </div>
-        <div class="clickbox">
-          <div class="text-block-10" onclick="openGrid('expd5');">Grid5</div>
-        </div>
-      </div>
     </div>
   </div>
-  <div id="expd1" class="tab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
-    <iframe src="lens/index.html" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
-  </div>
-  <div id="expd2" class="tab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
-    <iframe src="multiverse/index.html" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
-  </div>
-  <div id="expd3" class="tab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
-    <iframe src="parallelism/index.html" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
-  </div>
-  <div id="expd4" class="tab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
-    <iframe src="lens/index.html" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
-  </div>
-  <div id="expd5" class="tab" style="display:none;">
-    <span onclick="this.parentElement.style.display='none'" class="closeButton">&times;</span>
-    <iframe src="multiverse/index.html" width="100%" height="650" sandbox="allow-modals allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="display-capture; web-share" allowTransparency="true" allowfullscreen="true" loading="lazy" style="border-color: white;"></iframe>
-  </div>
-
-  <script>
-    function openGrid(tabContent) {
-      var i, x
-      x = document.getElementsByClassName('tab')
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = 'none'
-      }
-      document.getElementById(tabContent).style.display = 'block'
-    }
-  </script>
 
   <section class="footer-dark wf-section">
     <div class="container-2">
