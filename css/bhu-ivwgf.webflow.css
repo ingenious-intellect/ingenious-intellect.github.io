@@ -5363,7 +5363,6 @@ iframe{
   /* 16:9 */
   padding-top: 25px;
   height: 0;
-  margin: none;
 }
 
 .videoWrapper iframe {
@@ -5556,7 +5555,7 @@ iframe{
   transition: transform 0.4s ease-in-out;
 }
 
-
+.div-block-28:hover,
 .div-block-8>a>img:hover,
 .partner-logos:hover,
 .div-block-9-copy:hover{
